@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop_Prediction_in_SOIL</title>
+
+<link href="{{url_for('static',filename='css/style.css')}}" rel ="stylesheet">
+
+</head>
+<body>
+  
+
+    <img src= "{{url_for('static',filename ='images/KRISHAK.png')}}" class = "image">
+    
+    <br>
+
+    <div>
+
+
+    <h1 class="item" id="heading"> Crop Prediction in soil </h1>
+
+ 
+    <form action="{{ url_for('predict')}}"method = "post">
+        <label for="input1"> N </label>
+        <input type="text" id="input1" name="input1" required = "required"><br>
+      
+        <label for="input2"> P </label>
+        <input type="text" id="input2" name="input2" required = "required"><br>
+      
+        <label for="input3"> K </label>
+        <input type="text" id="input3" name="input3" required = "required"><br>
+      
+        <label for="input4"> Temperature </label>
+        <input type="text" id="input4" name="input4" required = "required"><br>
+      
+        <label for="input5"> Humidity </label>
+        <input type="text" id="input5" name="input5" required = "required"><br>
+      
+        <label for="input6"> Ph </label>
+        <input type="text" id="input6" name="input6" required = "required"><br>
+      
+        <label for="input7"> Rainfall </label>
+        <input type="text" id="input7" name="input7" required = "required"><br>
+
+        <br>
+        <br>
+        
+
+        <button type = "submit" > Predict </button>
+      </form>
+
+      <br>
+      <br>
+
+      <div>
+       <p class= "answer" >{{prediction_text}} </p>
+      </div>
+
+
+
+    </div>
+    
+</body>
+</html>
+
+
+  

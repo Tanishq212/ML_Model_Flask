@@ -1,3 +1,7 @@
+# import uvicorn
+# from fastapi import FastAPI
+# from manage import manage 
+
 import numpy as np
 from flask import Flask, request ,jsonify, render_template
 import pickle

@@ -34,19 +34,21 @@ def predict():
     return render_template("my_index.html" , prediction_text = "The Crop is {}".format(prediction))
     # return render_template(prediction)
 
-@app.route("/predict_api",methods=['POST'])
+@app.route("/predict_api",methods=['GET','POST'])
 def predict_api():
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
+    data = []
+    data.append(request.args.get('N'))
+    data.append(request.args.get('P'))
+    data.append(request.args.get('K'))
+    data.append(request.args.get('temperature'))
+    data.append(request.args.get('humidity'))
+    data.append(request.args.get('ph'))
+    data.append(request.args.get('rainfall'))
+    features = [np.array(data)]
+    prediction = model.predict(features)
+    print(prediction)
     output = prediction[0]
-    return jsonify(output)
-
-
-
-
-
+    return output
 
 if  __name__=='__main__':
-    app.run(debug = True)
-
-
+    app.run()

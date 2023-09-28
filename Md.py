@@ -6,6 +6,9 @@
 
 import numpy as np
 import pandas as pd
+import warnings
+
+warnings.filterwarnings("ignore", category=UserWarning)
 
 a=pd.read_csv("New_dataset_com.csv")
 

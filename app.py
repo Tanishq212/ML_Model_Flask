@@ -18,8 +18,6 @@ def Home():
 def login():
     return render_template("login.html")
 
-
-
 @app.route("/register")
 def register():
     return render_template("register.html")
@@ -55,7 +53,7 @@ def predict_api():
 # ip address "127.0.0.1:5000" but if we specify host parameter with ip address
 # "0.0.0.0:5000" then it will run on th ip address through which local system is connected
 if  __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="192.168.29.248",port=5000)
 
 
 # import uvicorn
